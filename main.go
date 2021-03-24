@@ -6,16 +6,19 @@ import (
 )
 
 func main() {
-	serverMux := http.NewServeMux()
-	helloHandler := handlers.NewHello()
-	jsonHandler := handlers.NewIndentJSON()
 
-	serverMux.Handle("/", helloHandler)
-	serverMux.Handle("/jsonify", jsonHandler)
+	serveMux := http.NewServeMux()
+	helloHandler := handlers.NewHello()
+	indentJSONHandler := handlers.NewIndentJSON()
+	primeNumberHandler := handlers.NewPrimeNumber()
+
+	serveMux.Handle("/", helloHandler)
+	serveMux.Handle("/stringify", indentJSONHandler)
+	serveMux.Handle("/check_number/", http.StripPrefix("/check_number", primeNumberHandler))
 
 	server := http.Server{
 		Addr:    ":5000",
-		Handler: serverMux,
+		Handler: serveMux,
 	}
 	server.ListenAndServe()
 }
