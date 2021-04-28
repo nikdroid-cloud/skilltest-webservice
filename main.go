@@ -20,5 +20,8 @@ func main() {
 		Addr:    ":5000",
 		Handler: serveMux,
 	}
-	server.ListenAndServe()
+
+	if err := server.ListenAndServe(); err != nil {
+		panic(err)
+	}
 }
