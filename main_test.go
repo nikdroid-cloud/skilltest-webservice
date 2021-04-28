@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/nikdroid-cloud/skillTest/handlers"
+	"github.com/nikdroid-cloud/skilltest/handlers"
 )
 
 func TestHelloHandler(t *testing.T) {
