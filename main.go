@@ -2,7 +2,8 @@ package main
 
 import (
 	"net/http"
-	"nikdroid-cloud/skillTest/handlers"
+
+	"github.com/nikdroid-cloud/skillTest/handlers"
 )
 
 func main() {

@@ -6,9 +6,10 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
-	"nikdroid-cloud/skillTest/handlers"
 	"strconv"
 	"testing"
+
+	"github.com/nikdroid-cloud/skillTest/handlers"
 )
 
 func TestHelloHandler(t *testing.T) {
